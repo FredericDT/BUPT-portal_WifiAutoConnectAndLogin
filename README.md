@@ -21,4 +21,4 @@ Delete this key in registry
 ```
 
 ## Credits
-@dachr8
+[@dachr8](https://github.com/dachr8)
