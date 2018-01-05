@@ -3,13 +3,8 @@
 $workpath=(Get-Item -Path ".\" -Verbose).FullName + "\"
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" "AutoRunWifi" ('"'+$workpath+"OnStart.cmd"+'"') -type "String"
 #writeRegInfo
-'#author dachr
-#contact 805960083@qq.com
-
-@echo off
-@set Path=%Path%;%SystemRoot%\system32\WindowsPowerShell\v1.0\& powershell -ExecutionPolicy Unrestricted "'+$workpath+'AutoLogin.ps1'+'"
-exit'>OnStart.cmd
-#onStart.cmd
+Out-File -FilePath OnStart.cmd -InputObject ('@echo off && %SystemRoot%\system32\WindowsPowerShell\v1.0\powershell -ExecutionPolicy Unrestricted "'+$workpath+'AutoLogin.ps1'+'" && exit') -Encoding ascii
+#OnStart.cmd
 '#author FredericDT
 #contact i@fdt.onl
 
