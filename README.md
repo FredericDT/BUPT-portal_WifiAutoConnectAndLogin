@@ -1,4 +1,4 @@
-# BUPT-portal_WifiAutoConnecctAndLogin
+# BUPT-portal_WifiAutoConnectAndLogin
 
 ## Description
 This is a powershell script intent to free your hand to access the campus net at BUPT  
