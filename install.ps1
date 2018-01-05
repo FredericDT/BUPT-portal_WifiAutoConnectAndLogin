@@ -9,17 +9,17 @@ Out-File -FilePath OnStart.cmd -InputObject ('@echo off && %SystemRoot%\system32
 #contact i@fdt.onl
 
 netsh wlan connect ssid=BUPT-portal name=BUPT-portal
-echo 请等待5秒
+echo "Please wait for 5 seconds"
 sleep 5
 $config=Get-Content config.txt
 $un = $config[0]
 $pw = $config[1]
 $f = @{DDDDD=$un;upass=$pw;"0MKKey"=""}
 $R=Invoke-WebRequest -Uri "http://10.3.8.211/" -Method POST -Body $f
-echo 任务完成
+echo "Task complete"
 '>AutoLogin.ps1
 #AutoLogin.ps1
 ''>config.txt
 #config.txt
-echo "请修改config.txt，第一行为学号，第二行为密码"
+echo "Please edit the config.txt with the first line is your student_id and the next line is your password"
 pause
